@@ -3,10 +3,19 @@
     <PreferenceCategory app:title="Server Ip address">
 
         <EditTextPreference
-            app:key="ip_address"
-            app:title="IP"
+            app:key="ip_address_flask"
+            app:title="Flask server IP address "
             app:defaultValue="http://1a8ce6a44448.ngrok.io"
             app:useSimpleSummaryProvider="true" />
+
+
+        <EditTextPreference
+            app:key="ip_address_laravel"
+            app:title="Laravel server IP address "
+            app:defaultValue="http://192.168.1.24"
+            app:useSimpleSummaryProvider="true" />
+
+
     </PreferenceCategory>
 
 </PreferenceScreen>

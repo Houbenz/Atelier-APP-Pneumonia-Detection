@@ -135,9 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             progresBarRegister.setVisibility(View.VISIBLE);
 
-            User user = new User(username,
-                    emailInput.getEditText().getText().toString(),
-                    password);
+            User user = new User(username, email, password,password);
 
             Retrofit retrofit = Singleton.retorfitLaravel;
             UploadService uploadService = retrofit.create(UploadService.class);
@@ -152,7 +150,6 @@ public class RegisterActivity extends AppCompatActivity {
                         Log.i("okii",response.body().toString());
                         Toast.makeText(getApplicationContext(),getString(R.string.you_are_registerd),Toast.LENGTH_SHORT).show();
                         getSharedPreferences("user",MODE_PRIVATE).edit().putString("token",response.body().getToken()).apply();
-                        getSharedPreferences("voitureDialog", Context.MODE_PRIVATE).edit().clear().apply();
 
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);

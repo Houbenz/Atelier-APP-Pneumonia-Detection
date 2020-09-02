@@ -147,7 +147,7 @@ public class LoginActivity extends AppCompatActivity {
                         ResultUser resultUser = response.body();
                         Toast.makeText(getApplicationContext(),
                                 String.format(Locale.US,"%s %s",
-                                        getString(R.string.bonjour), resultUser.getUser().getName()),Toast.LENGTH_LONG).show();
+                                        getString(R.string.bonjour), resultUser.getUser().name),Toast.LENGTH_LONG).show();
 
                         getSharedPreferences("user", Context.MODE_PRIVATE)
                                         .edit().putString("token","Bearer "+resultUser.getToken()).apply();

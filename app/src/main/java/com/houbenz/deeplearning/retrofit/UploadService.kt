@@ -40,9 +40,17 @@ interface UploadService {
 class Message(var message: String)
 
 class User(
+    @JvmField
     var name: String,
+
+    @JvmField
     var email: String,
-    var password: String
+
+    @JvmField
+    var password: String,
+
+    @JvmField
+    var password_confirmation: String
 ){
 }
 class ResultUser(var user: User, var token: String, var message: String)

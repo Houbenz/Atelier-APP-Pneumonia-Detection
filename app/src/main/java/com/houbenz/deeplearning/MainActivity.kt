@@ -17,6 +17,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
+import androidx.preference.PreferenceManager
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.houbenz.deeplearning.retrofit.Message
 import com.houbenz.deeplearning.retrofit.Singleton
@@ -81,6 +82,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun disconnectRequest(){
+
+
 
         URL.api.laravel_api
         val uploadService=Singleton.retorfitLaravel.create(UploadService::class.java)
