@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">Deep Learning</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="results">Résultats</string>
+    <string name="train_model">Entrainer le modèle</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_predict">Prediction</string>
+    <string name="title_results">Résultats</string>
+    <string name="title_activity_main2">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="penumonie_text1">La pneumonie est une maladie courante qui continue à être l’une des principales causes de décès des enfants dans les pays en cours de développement et des personnes âgées dans les pays développés [3]. C’est une infection des poumons causée le plus souvent par un virus ou une bactérie. L’infection touche plus précisément les alvéoles pulmonaires, ces minuscules sacs en forme de ballons situés à l’extrémité des bronchioles. Elle touche généralement un seul des cinq lobes du poumon, d’où le terme pneumonie lobaire. Lorsque la pneumonie atteint aussi les bronches, on l’appelle bronchopneumonie [4].</string>
+    <string name="pneumonie_text2">Selon les estimations de l’Organisation Mondiale de la Santé (OMS ou WHO en anglais), 450 millions cas de pneumonie sont enregistrés chaque année ; environ 4 millions meurent de cette maladie, représentant 7% de la mortalité totale de 57 millions de personnes [2][5]. Les incidences les plus élevées surviennent chez les enfants de moins de 5 ans et chez les adultes de plus de 75 ans (Figure 1) [3].</string>
+    <string name="text3">De nombreux micro-organismes sont associés à la pneumonie (bactéries, virus ou champignons). Parmi les bactéries, le Streptococcus pneumoniae continue d’être le principal pathogène chez les enfants de tout âge. La pneumonie à streptocoque du groupe A est beaucoup moins courante. Même si le Staphylococcus aureus n’est pas une cause courante de pneumonie pédiatrique, on l’observe de plus en plus dans les collectivités où le Staphylococcus aureus méthicillinorésitant est prévalent. L’Haemophilus influenzae de type B a presque disparu grâce à la vaccination. Le Mycoplasma pneumoniae et le Chlamydophila pneumoniae sont des causes plus fréquentes de pneumonie chez les enfants d’âge scolaire, mais ils sont parfois responsables d’une pneumonie chez des enfants plus jeunes [10].</string>
+    <string name="text4">
+        (A) Pneumonie causée par le Boca virus humain chez une fille de 1 an. La radiographie thoracique montre des infiltrats alvéolaires dans le lobe moyen droit et le lobe inférieur gauche.
+        \n(B) Pneumonie causée par le métapneumovirus et Haemophilus inﬂuenzae chez une fille de 7 ans. La radiographie du thorax montre un infiltrat alvéolaire dans le lobe inférieur gauche.
+        \n(C) Pneumonie causée par le rhinovirus et Streptococcus pneumoniae chez une fille de 11 ans. La radiographie du thorax montre un infiltrat alvéolaire dans le lobe inférieur droit.
+        \n(D) Pneumonie causée par l\'adénovirus chez un homme de 22 ans. La radiographie thoracique montre des infiltrats alvéolaires et interstitiels dans le lobe inférieur droit.</string>
+    <string name="text5">Les symptômes sont identiques pour les pneumonies virales ou bactériennes. Dans le cas d\’une pneumonie virale, ils peuvent néanmoins être plus nombreux que pour une pneumonie bactérienne.[1]</string>
+    <string name="text6">Les symptômes évocateurs d\'une pneumonie comprennent une fièvre associée à des symptômes respiratoires tels que toux, production de crachats, pleurésie et dyspnée. Des symptômes similaires peuvent être causés par une bronchite aiguë, une sinusite et diverses maladies non infectieuses. Les patients âgés présentent souvent moins de symptômes ou des symptômes moins graves que les patients plus jeunes. Les résultats physiques incluent de la fièvre chez 80% des patients ; la plupart ont une fréquence respiratoire supérieure à 20 par minute, des crépitements sont entendus à l\'auscultation dans 80% des cas et jusqu\'à 30% ont des signes de consolidation [13][14].</string>
+
+    <string name="text7">La plupart des patients atteints de pneumonie acquise dans la communauté sont traités en ambulatoire et ne nécessitent pas d\'études approfondies, à l\'exception d\'un film radiographique pour établir le diagnostic, des études de laboratoire sélectionnées pour déterminer l\'étendue de la maladie et des conditions associées, et des études microbiologiques. Les tests de laboratoire suggérés pour les patients hospitalisés sont résumés dans Tableau 2 [13].</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="loggedIn">Vous êtes connecté</string>
+    <string name="username_logged">Bonjour</string>
+    <string name="disconnect">Déconnecter</string>
+    <string name="see_prize">Voir les récompenses</string>
+    <string name="win_car">Gagner une voiture</string>
+    <string name="loginText">S\'authentifier</string>
+    <string name="new_text">Nouveau ?</string>
+    <string name="create_account">Créer un compte !</string>
+    <string name="forgot_password">Mot de passe oublié</string>
+    <string name="prompt_username">Nom d\'utilisateur</string>
+    <string name="continue_">Continuer</string>
+    <string name="already_created">Vous êtes déja enregistré ?</string>
+    <string name="login_in_registeractivity">Authentifier vous !</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+    <string name="home_second">Home Second</string>
+
+    <string name="open_navigation">navigation opened</string>
+    <string name="close_navigation">navigation closed</string>
+    <string name="login">S\'authentifier</string>
+    <string name="register">S\'inscrire</string>
+    <string name="authentification">Authentification</string>
+    <string name="email_error">Oops, l\'adresse mail n\'est pas valide</string>
+    <string name="password_error"><![CDATA[Mot de passe doit être > 7]]></string>
+    <string name="bonjour">Bonjour</string>
+    <string name="verify_cnx">Vérifier votre connexion</string>
+    <string name="fill_form">Remplisser le formulaire avant</string>
+    <string name="accept_condition">en acceptant, vous acceptez nos Conditions d\'utilisation et Politique de confidentialité</string>
+    <string name="username_error"><![CDATA[Nom d\'utilisateur doit être > 7]]></string>
+    <string name="you_are_registerd">Vous etes enregistré</string>
+    <string name="error_happended">une erreur est parvenu</string>
+    <string name="grille">Grille</string>
+    <string name="voiture">voiture</string>
+    <string name="niveaux">Niveaux</string>
+    <string name="voiture_gagne">Voiture à gagner</string>
+    <string name="really_want_disconnect">Voulez vous vraiment vous déconnecter ?</string>
+    <string name="annuler">Annuler</string>
+    <string name="you_are_now_disconnect">Vous êtes maintenant déconnecté</string>
+    <string name="ad_loaded">L\'annonce est chargé</string>
+    <string name="failed_load_ad">Le chargement de l\'annonce a echoué</string>
+    <string name="unlock_level_dialog_msg">Déverouiller le niveau avec une annonce ?</string>
+    <string name="deverouiller">Déverouiller</string>
+    <string name="annonce_pas_charge">L\'annonce n\'est pas encore chargé</string>
+    <string name="quit">Quitter</string>
+    <string name="final_score">"Score final: "</string>
+    <string name="finish_all_levels">Terminer touts les niveaux pour voir votre score total</string>
+    <string name="type">Type</string>
+    <string name="voir_en_plus">Voir en plus</string>
+    <string name="tapper_pour_lancer">Tapper pour LANCER</string>
+    <string name="go">GO</string>
+    <string name="game_activity_title">Le jeu</string>
+    <string name="niveau">Niveau </string>
+    <string name="aucun_niveau">Aucun niveau</string>
+    <string name="plus_de_vie_message">vous n\'avez plus de vie</string>
+    <string name="press">press</string>
+    <string name="score_final">SCORE FINAL: …</string>
+    <string name="difficult">Difficulté</string>
+    <string name="finale">FINALE</string>
+    <string name="reset">Réinitialiser</string>
+    <string name="mail_sent">mail envoyé, vérifier votre boite mail</string>
+    <string name="error_happened">une erreur est parvenu</string>
+    <string name="r_initialiser_votre_mot_de_pass">Problèmes de connexion ?</string>
+    <string name="text_reset_password">Entrez votre adresse e-mail et nous vous enverrons un lien pour récupérer votre compte.</string>
+    <string name="app_desc_regiser_login">L\'application qui t\'offre une voiture par semaine !</string>
+
+
+
+
+
+</resources>
