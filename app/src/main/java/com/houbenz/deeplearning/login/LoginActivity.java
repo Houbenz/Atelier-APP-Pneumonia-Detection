@@ -82,9 +82,6 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
-        //to remove TODO
-        login.setEnabled(true);
-
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setDisplayHomeAsUpEnabled(true);
@@ -131,11 +128,6 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.login)
     public void LoginButtonClick(){
 
-        //to remove TODO
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(intent);
-        finish();
-
         String usernameText= emailInput.getEditText().getText().toString();
         String passwordText= passwordInput.getEditText().getText().toString();
 
@@ -143,7 +135,7 @@ public class LoginActivity extends AppCompatActivity {
 
             loadingProgressBar.setVisibility(View.VISIBLE);
 
-            Retrofit retrofit = Singleton.retorfit;
+            Retrofit retrofit = Singleton.retorfitLaravel;
             UploadService userService =retrofit.create(UploadService.class);
 
             Call<ResultUser> callLogin =userService.loginUser(usernameText,passwordText);
@@ -158,7 +150,9 @@ public class LoginActivity extends AppCompatActivity {
                                         getString(R.string.bonjour), resultUser.getUser().getName()),Toast.LENGTH_LONG).show();
 
                         getSharedPreferences("user", Context.MODE_PRIVATE)
-                                        .edit().putString("token",resultUser.getToken()).apply();
+                                        .edit().putString("token","Bearer "+resultUser.getToken()).apply();
+
+                        Log.i("okk","token "+resultUser.getToken());
 
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         startActivity(intent);

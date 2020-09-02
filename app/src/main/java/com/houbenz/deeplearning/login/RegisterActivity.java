@@ -137,15 +137,11 @@ public class RegisterActivity extends AppCompatActivity {
 
             User user = new User(username,
                     emailInput.getEditText().getText().toString(),
-                    password,
-                    "1996-05-22",
-                    "Male",
                     password);
 
-            Retrofit retrofit = Singleton.retorfit;
+            Retrofit retrofit = Singleton.retorfitLaravel;
             UploadService uploadService = retrofit.create(UploadService.class);
 
-            user.setPassword_confirmation(user.getPassword());
             Call<ResultUser> callRegister= uploadService.registerUser(user);
 
             callRegister.enqueue(new Callback<ResultUser>() {

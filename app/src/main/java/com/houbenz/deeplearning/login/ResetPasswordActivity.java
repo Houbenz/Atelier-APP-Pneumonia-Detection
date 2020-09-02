@@ -99,7 +99,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
                 progressBarReset.setVisibility(View.VISIBLE);
                 sendEmail.setEnabled(false);
                 resetEmail.setEnabled(false);
-                Retrofit retrofit = Singleton.retorfit;
+                Retrofit retrofit = Singleton.retorfitLaravel;
                 UploadService userService =retrofit.create(UploadService.class);
                 Call<Message> callReset =userService.sendEmailResetPassword(email);
 

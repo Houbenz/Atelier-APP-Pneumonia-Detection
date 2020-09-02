@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
 import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
@@ -107,12 +108,11 @@ class PredictFragment : Fragment() {
 
 
 
-        val retorfit=
-            Retrofit.Builder()
-                .baseUrl("http://69a48a8830cb.ngrok.io")
-                .client(OkHttpClient())
-                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
-                .build()
+        val sharedPreferences=activity?.getSharedPreferences("api",Context.MODE_PRIVATE)
+
+        URL.api.flask_api= sharedPreferences?.getString("flask_api","null").toString()
+
+        val retorfit=Singleton.retorfitFlask
 
         val uploadService=retorfit.create(UploadService::class.java)
         val uploadCall: Call<Prediction> = uploadService.upload(image)

@@ -30,25 +30,16 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         ButterKnife.bind(this);
 
-
-        //checkLogin();
-
-        //Log.i("okk","base url : "+Singleton.base_url);
-
-        Intent intent = new Intent(getApplicationContext(), LoginRegisterActivity.class);
-        startActivity(intent);
-        finish();
+        checkLogin();
     }
 
 
-
-
     private void checkLogin(){
-        Retrofit retrofit = Singleton.retorfit;
+        Retrofit retrofit = Singleton.retorfitLaravel;
         UploadService userService =retrofit.create(UploadService.class);
 
         String token = getSharedPreferences("user", Context.MODE_PRIVATE).getString("token","null");
-        Call<Message> checkLoginCall = userService.checkLogin("Bearer "+token);
+        Call<Message> checkLoginCall = userService.checkLogin(token);
 
         checkLoginCall.enqueue(new Callback<Message>() {
             @Override
