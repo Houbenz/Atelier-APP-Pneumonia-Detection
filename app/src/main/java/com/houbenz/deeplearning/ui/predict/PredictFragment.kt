@@ -15,10 +15,11 @@ import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import com.google.gson.GsonBuilder
 import com.houbenz.deeplearning.R
-import com.houbenz.deeplearning.retrofit.RetrofitFactory
 import com.houbenz.deeplearning.retrofit.Singleton
+import com.houbenz.deeplearning.retrofit.URL
 import com.houbenz.deeplearning.retrofit.UploadService
 import okhttp3.*
 import retrofit2.Call
@@ -104,9 +105,17 @@ class PredictFragment : Fragment() {
         val fileRequestBody=RequestBody.create(MediaType.parse("image/*"),file)
         val image: MultipartBody.Part = MultipartBody.Part.createFormData("image","image.png",fileRequestBody)
 
-        val uploadService=Singleton.retorfit.create(UploadService::class.java)
-        val uploadCall: Call<Prediction> = uploadService.upload(image)
 
+
+        val retorfit=
+            Retrofit.Builder()
+                .baseUrl("http://69a48a8830cb.ngrok.io")
+                .client(OkHttpClient())
+                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
+                .build()
+
+        val uploadService=retorfit.create(UploadService::class.java)
+        val uploadCall: Call<Prediction> = uploadService.upload(image)
 
 
         uploadCall.enqueue(object : Callback<Prediction>{

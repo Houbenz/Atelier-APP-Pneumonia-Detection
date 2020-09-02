@@ -61,3 +61,10 @@ class ResultUser(var user: User, var token: String, var message: String)
 //Retrofit singleton, note that i only return the service
 object RetrofitFactory{
 }
+
+class URL{
+    object api{
+        val flask_api="http://69a48a8830cb.ngrok.io"
+        val laravel_api=""
+    }
+}

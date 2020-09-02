@@ -36,10 +36,10 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_margin="8dp"
+                android:textColor="@color/colorPrimaryDark"
                 android:text="Charger une image pour obtenir une prédiction"
                 android:textAlignment="center"
-                android:textSize="24sp"
-                android:textColor="@android:color/black" />
+                android:textSize="24sp"/>
 
             <LinearLayout
                 android:id="@+id/buttons_layout"
@@ -73,6 +73,7 @@
 
             <ImageView
                 android:id="@+id/image_predict"
+                style="@style/textNormal"
                 android:padding="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

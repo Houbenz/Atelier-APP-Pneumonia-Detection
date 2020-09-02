@@ -9,11 +9,14 @@
 
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title="@string/app_name"
-        android:background="@color/colorAccent"
-        app:titleTextColor="@color/colorPrimary"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
+        app:menu="@menu/main_activity"/>
+
 
 
     <fragment
@@ -31,7 +34,8 @@
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
+        app:itemTextColor="@color/colorPrimaryDark"
+        android:background="@color/secondaryTextColor"
         app:menu="@menu/bottom_nav_menu" />
 
 </LinearLayout>

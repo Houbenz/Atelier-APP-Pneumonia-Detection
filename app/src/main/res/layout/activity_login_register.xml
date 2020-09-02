@@ -87,7 +87,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="Résultats d'entrainement de modéles, et la possibilité de prédire le contenu des radiographies thoraciques"
+        android:text="Résultats d'entrainement de modèles, et la possibilité de prédire le contenu des radiographies thoraciques"
         android:textAlignment="center"
         android:textSize="18dp"
         android:textStyle="bold"

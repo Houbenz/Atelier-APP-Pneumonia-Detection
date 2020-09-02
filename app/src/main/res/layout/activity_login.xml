@@ -20,6 +20,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="64dp"
+        android:background="@drawable/button_color_blue_light"
         android:enabled="false"
         android:text="@string/continue_"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
+        style="@style/textShadow"
         android:text="@string/loginText"
         android:textSize="24dp"
         android:textStyle="bold"
@@ -101,9 +103,10 @@
 
     <TextView
         android:id="@+id/textView11"
+        style="@style/textShadow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="8dp"
         android:text="@string/new_text"
         android:textSize="14dp"
@@ -112,26 +115,31 @@
 
     <TextView
         android:id="@+id/registerTextView"
+        style="@style/textShadow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="2dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
         android:text="@string/create_account"
         android:textColor="#2196F3"
         android:textSize="14dp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/passwordForgottenTextView"
+        app:layout_constraintHorizontal_bias="0.18"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
         android:id="@+id/passwordForgottenTextView"
+        style="@style/textShadow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="4dp"
         android:text="@string/forgot_password"
         android:textColor="#03A9F4"
-        android:textSize="14dp"
+        android:textSize="12dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />

@@ -33,6 +33,7 @@ public class SplashScreen extends AppCompatActivity {
 
         //checkLogin();
 
+        //Log.i("okk","base url : "+Singleton.base_url);
 
         Intent intent = new Intent(getApplicationContext(), LoginRegisterActivity.class);
         startActivity(intent);

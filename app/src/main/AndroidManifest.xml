@@ -17,40 +17,40 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
-        <activity android:name=".login.ResetPasswordActivity"
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".login.ResetPasswordActivity"
             android:parentActivityName=".login.LoginActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashScreen"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".login.LoginActivity"
             android:parentActivityName=".login.LoginRegisterActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".login.RegisterActivity"
             android:parentActivityName=".login.LoginRegisterActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".login.LoginRegisterActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
