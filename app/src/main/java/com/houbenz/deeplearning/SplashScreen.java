@@ -2,17 +2,20 @@ package com.houbenz.deeplearning;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import com.houbenz.deeplearning.login.LoginActivity;
 import com.houbenz.deeplearning.login.LoginRegisterActivity;
 import com.houbenz.deeplearning.retrofit.Message;
 import com.houbenz.deeplearning.retrofit.Singleton;
+import com.houbenz.deeplearning.retrofit.URL;
 import com.houbenz.deeplearning.retrofit.UploadService;
 
 import butterknife.ButterKnife;
@@ -30,7 +33,24 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         ButterKnife.bind(this);
 
-        checkLogin();
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+
+        String ip_address_flask = sharedPreferences.getString("ip_address_flask", "null");
+        URL.api.INSTANCE.setFlask_api(ip_address_flask);
+
+        String ip_address_laravel = sharedPreferences.getString("ip_address_laravel", "null");
+        URL.api.INSTANCE.setLaravel_api(ip_address_laravel);
+
+        Log.i("okk","here");
+        Log.i("okk","laravel : "+URL.api.INSTANCE.getLaravel_api()+"   flask : "+URL.api.INSTANCE.getFlask_api());
+
+        if(!ip_address_laravel.equalsIgnoreCase("") && !ip_address_laravel.equalsIgnoreCase("null")){
+            checkLogin();
+        }else {
+            Intent intent = new Intent(getApplicationContext(), LoginRegisterActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
 

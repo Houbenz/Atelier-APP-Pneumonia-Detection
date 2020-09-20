@@ -63,7 +63,7 @@ object RetrofitFactory{
 
 class URL{
     object api{
-        var flask_api="http://69a48a8830cb.ngrok.io/"
-        var laravel_api="http://192.168.1.24:8000/api/"
+        var flask_api=""
+        var laravel_api=""
     }
 }

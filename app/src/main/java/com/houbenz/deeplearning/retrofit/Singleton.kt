@@ -13,16 +13,6 @@ class Singleton{
 
         @JvmField
         var context: Context? =null
-
-
-        @JvmField
-        val retorfitFlask=
-            Retrofit.Builder()
-                .baseUrl(URL.api.flask_api)
-                .client(OkHttpClient())
-                .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
-                .build()
-
         @JvmField
         val retorfitLaravel=
             Retrofit.Builder()

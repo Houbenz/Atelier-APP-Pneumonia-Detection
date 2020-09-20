@@ -7,23 +7,19 @@
     tools:context=".ui.predict.PredictFragment">
 
 
-
-
     <androidx.cardview.widget.CardView
-        android:visibility="visible"
         android:layout_width="0dp"
         android:layout_height="450dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/uploadButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:elevation="8dp"
         android:translationZ="8dp"
-        app:cardCornerRadius="16dp">
+        android:visibility="visible"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/uploadButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -34,12 +30,12 @@
                 android:id="@+id/textview_predict"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
                 android:layout_margin="8dp"
-                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center"
                 android:text="Charger une image pour obtenir une prédiction"
                 android:textAlignment="center"
-                android:textSize="24sp"/>
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="24sp" />
 
             <LinearLayout
                 android:id="@+id/buttons_layout"
@@ -74,10 +70,10 @@
             <ImageView
                 android:id="@+id/image_predict"
                 style="@style/textNormal"
-                android:padding="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="16dp" />
+                android:layout_height="350dp"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp" />
         </RelativeLayout>
 
 

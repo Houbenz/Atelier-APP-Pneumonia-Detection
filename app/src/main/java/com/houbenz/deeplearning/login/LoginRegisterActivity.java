@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.houbenz.deeplearning.R;
+import com.houbenz.deeplearning.SettingsActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -15,13 +16,6 @@ import butterknife.OnClick;
 
 
 public class LoginRegisterActivity extends AppCompatActivity {
-
-
-    @BindView(R.id.registerBtn)
-    Button registerBtn;
-
-    @BindView(R.id.loginBtn)
-    Button loginBtn;
 
 
     @Override
@@ -41,6 +35,12 @@ public class LoginRegisterActivity extends AppCompatActivity {
     @OnClick(R.id.registerBtn)
     void openRegisterActivity(){
         Intent resultIntent = new Intent(getApplicationContext(), RegisterActivity.class);
+        startActivity(resultIntent);
+    }
+
+    @OnClick(R.id.settings)
+    void openSettingsActivity(){
+        Intent resultIntent = new Intent(getApplicationContext(), SettingsActivity.class);
         startActivity(resultIntent);
     }
 }

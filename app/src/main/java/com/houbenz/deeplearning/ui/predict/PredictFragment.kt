@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
 import com.google.gson.GsonBuilder
 import com.houbenz.deeplearning.R
+import com.houbenz.deeplearning.SettingsActivity
 import com.houbenz.deeplearning.retrofit.Singleton
 import com.houbenz.deeplearning.retrofit.URL
 import com.houbenz.deeplearning.retrofit.UploadService
@@ -29,6 +30,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.ByteArrayOutputStream
+import java.lang.Exception
 import java.util.*
 
 class PredictFragment : Fragment() {
@@ -52,7 +54,6 @@ class PredictFragment : Fragment() {
         ok_button=root.findViewById(R.id.ok_button)
         close_button=root.findViewById(R.id.close_button)
         buttons_layout=root.findViewById(R.id.buttons_layout)
-
         upload.setOnClickListener {
             val intent  =Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(intent,15)
@@ -106,46 +107,55 @@ class PredictFragment : Fragment() {
         val fileRequestBody=RequestBody.create(MediaType.parse("image/*"),file)
         val image: MultipartBody.Part = MultipartBody.Part.createFormData("image","image.png",fileRequestBody)
 
+        Log.i("okk","flask ${URL.api.flask_api}")
 
 
-        val sharedPreferences=activity?.getSharedPreferences("api",Context.MODE_PRIVATE)
 
-        URL.api.flask_api= sharedPreferences?.getString("flask_api","null").toString()
+        try {
+                 var retorfit=
+                    Retrofit.Builder()
+                        .baseUrl(URL.api.flask_api)
+                        .client(OkHttpClient())
+                        .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
+                        .build()
 
-        val retorfit=Singleton.retorfitFlask
 
-        val uploadService=retorfit.create(UploadService::class.java)
-        val uploadCall: Call<Prediction> = uploadService.upload(image)
+            val uploadService=retorfit.create(UploadService::class.java)
+            val uploadCall: Call<Prediction> = uploadService.upload(image)
 
 
-        uploadCall.enqueue(object : Callback<Prediction>{
-            override fun onResponse(call: Call<Prediction>, response: Response<Prediction>) {
+            uploadCall.enqueue(object : Callback<Prediction>{
+                override fun onResponse(call: Call<Prediction>, response: Response<Prediction>) {
 
-                Log.i("okk","code response " +response.code())
-                if (response.code() == 200){
+                    Log.i("okk","code response " +response.code())
+                    if (response.code() == 200){
 
-                    if (response.body() != null){
+                        if (response.body() != null){
 
+                            dialog.dismiss()
+                            val resultDialog =makeDialog(response.body()!!)
+                            resultDialog.show()
+                            Toast.makeText(context,"Image uploaded succesfully : "+ response.body()?.prediction,Toast.LENGTH_LONG).show()
+                            Log.i("okk",response.body().toString())
+                        }
+
+                    }else
+                    {
+                        Log.i("okk","response error body : "+response.errorBody())
                         dialog.dismiss()
-                        val resultDialog =makeDialog(response.body()!!)
-                        resultDialog.show()
-                        Toast.makeText(context,"Image uploaded succesfully : "+ response.body()?.prediction,Toast.LENGTH_LONG).show()
-                        Log.i("okk",response.body().toString())
                     }
+                }
 
-                }else
-                {
-                    Log.i("okk","response error body : "+response.errorBody())
+                override fun onFailure(call: Call<Prediction>, t: Throwable) {
+                    Log.i("okk","response error body : "+t.message)
+                    call.cancel()
                     dialog.dismiss()
                 }
-            }
+            })
 
-            override fun onFailure(call: Call<Prediction>, t: Throwable) {
-                Log.i("okk","response error body : "+t.message)
-                call.cancel()
-                dialog.dismiss()
-            }
-        })
+        }catch (e:Exception){
+            Toast.makeText(context,"link not valid",Toast.LENGTH_LONG).show()
+        }
 
     }
 

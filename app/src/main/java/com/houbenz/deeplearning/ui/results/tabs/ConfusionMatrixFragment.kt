@@ -46,11 +46,11 @@ class ConfusionMatrixFragment : Fragment() {
 
         val models =arrayListOf<Model>()
 
-        models.add(Model(365,25,214,22,"Resnet"))
-        models.add(Model(362,28,213,21,"VGG16"))
-        models.add(Model(372,18,213,21,"Inception"))
-        models.add(Model(385,5,197,37,"MobileNet"))
-        models.add(Model(373,17,209,25,"EfficientNet"))
+        models.add(Model(376,206,28,1,"Resnet"))
+        models.add(Model(362,213,21,28,"VGG16"))
+        models.add(Model(372,213,21,18,"Inception"))
+        models.add(Model(385,197,37,5,"MobileNet"))
+        models.add(Model(373,209,25,17,"EfficientNet"))
         return models
     }
 
